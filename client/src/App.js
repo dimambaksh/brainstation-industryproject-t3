@@ -1,9 +1,11 @@
+import "./App.css";
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Home from './pages/Home/Home';
 import Login from './pages/LogIn/Login';
 import Reserve from './pages/Reserve/Reserve';
-import "./App.css";
+import Desks from './components/Desks/Desks';
 
 class App extends React.Component {
 
@@ -36,8 +38,9 @@ class App extends React.Component {
         {(this.state.authorized) ? (
         <Router>
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route exact path="/desks" component={Desks} />
             <Route path="/reserve" component={Reserve} />
+            <Route path="/" exact component={Home} />
             <Redirect to="/" />
           </Switch>
         </Router>

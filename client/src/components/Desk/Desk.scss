@@ -1,0 +1,37 @@
+.deskcontainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "tl tr"
+    "ml mr"
+    "bl br";
+    column-gap: 5px;
+    row-gap: 5px;
+
+    .desk{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: darkgrey;
+        
+        &__person{
+            background-color: green;
+            border-radius: 50%;
+            border: 2px solid white;
+            width: 25%;
+            height: 50%;
+            z-index: 100;
+        }
+        &__location{
+            background-color: wheat;
+            border-radius: 2px;
+            border: 2px solid white;
+            margin-left: -5px;
+            width: 35%;
+            height: 75%;
+        }
+    }
+}
