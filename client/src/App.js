@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import Home from './pages/Home/Home';
 import Login from './pages/LogIn/Login';
 import Reserve from './pages/Reserve/Reserve';
+import Quiz from './pages/Quiz/Quiz';
 import "./App.css";
 
 class App extends React.Component {
@@ -27,6 +28,14 @@ class App extends React.Component {
     //axios login then
     //if valid set state {user: returned user object, authorized: true}
     this.setState({authorized: true});
+    sessionStorage.setItem('loggedIn', `${this.state.email}`);
+  }
+
+  componentDidMount(){
+    const username = sessionStorage.getItem('loggedIn');
+    if(username != null){
+      this.setState({authorized: true});
+    }
   }
 
   render() {
@@ -38,11 +47,12 @@ class App extends React.Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/reserve" component={Reserve} />
+            <Route path="/quiz" component={Quiz} />
             <Redirect to="/" />
           </Switch>
         </Router>
         ) : (
-          <Login email={this.state.email} password={this.setState.password} listener={this.logIn} submitListener={this.submitListener}/>
+          <Login email={this.state.email} password={this.setState.password} listener={this.logInListener} submitListener={this.submitListener}/>
         )}
       </div>
     );
