@@ -1,11 +1,11 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import Home from './pages/Home/Home';
+import Login from './pages/LogIn/Login';
+import Reserve from './pages/Reserve/Reserve';
+import Quiz from './pages/Quiz/Quiz';
+import Desks from './components/Desks/Desks';
 import "./App.css";
-
-import React from "react";
-import Home from "./pages/Home/Home";
-import Login from "./pages/LogIn/Login";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Desks from "./components/Desks/Desks";
-import Reserve from "./pages/Reserve/Reserve";
 
 class App extends React.Component {
   //once we have a backend authorized should be initialized to false
@@ -26,8 +26,16 @@ class App extends React.Component {
     event.preventDefault();
     //axios login then
     //if valid set state {user: returned user object, authorized: true}
-    this.setState({ authorized: true });
-  };
+    this.setState({authorized: true});
+    sessionStorage.setItem('loggedIn', `${this.state.email}`);
+  }
+
+  componentDidMount(){
+    const username = sessionStorage.getItem('loggedIn');
+    if(username != null){
+      this.setState({authorized: true});
+    }
+  }
 
   render() {
     return (
@@ -38,6 +46,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/desks" component={Desks} />
               <Route exact path="/reserve" component={Reserve} />
+              <Route path="/quiz" component={Quiz} />
               <Route component={Home} />
             </Switch>
           </Router>
@@ -45,7 +54,7 @@ class App extends React.Component {
           <Login
             email={this.state.email}
             password={this.setState.password}
-            listener={this.logIn}
+            listener={this.logInListener}
             submitListener={this.submitListener}
           />
         )}

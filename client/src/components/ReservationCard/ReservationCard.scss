@@ -1,0 +1,22 @@
+@import "../../styles/colors";
+
+.ReservationCard{
+    border: 1px solid $Grey;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__left{
+        width: 10rem;
+        text-align: left;
+
+        > * {
+            margin: 0;
+        }
+    }
+}
