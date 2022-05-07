@@ -1,0 +1,23 @@
+.Question__Title {
+  text-align: center;
+}
+.Question ul {
+  list-style-position: outside;
+}
+.Question ul li {
+  padding-bottom: 0.5rem;
+}
+.Question .centered {
+  text-align: center;
+}
+.Question .ButtonFlex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+.Question .ButtonFlex > * {
+  min-width: 45%;
+  width: 100%;
+}/*# sourceMappingURL=Question.css.map */

@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import React from "react";
+
 import { Link } from "react-router-dom";
 
 export default class Home extends React.Component {
@@ -27,6 +28,7 @@ export default class Home extends React.Component {
       <div>
         <h1>Welcome Username</h1>
         <Button
+          fullWidth
           variant="contained"
           onClick={(event) => {
             event.preventDefault();
@@ -40,9 +42,9 @@ export default class Home extends React.Component {
           Book a desk
         </Button>
         {/* href="/reserve" */}
-        <Link to="/reserve">Reserve a Spot</Link>
+        {/* <Link to="/reserve">Reserve a Spot</Link> */}
         <h2>Your Upcoming Reservations</h2>
-        <p>reservations jsx goes here...</p>
+        <ReservationCard date={Date.now()} zone='Yellow' desk='Y7'/>
       </div>
     );
   }
