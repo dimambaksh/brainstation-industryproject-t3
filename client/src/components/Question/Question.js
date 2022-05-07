@@ -5,11 +5,29 @@ import "./Question.css";
 export default class Question extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { checked: [false,false,false]};
+
+    const checkboxes = {};
+    props.question.options.forEach(option => checkboxes[option] = false);
+    
+    this.state = { checked: {...checkboxes}};
   }
 
-  checkedListener = (i) => {
-      this.setState({checked: [...this.statechecked]});
+  handleChange = (e) => {
+    this.setState({checked: {...this.state.checked, [e.target.name]: e.target.checked}});
+  }
+
+  validateCheckboxes = () => {
+    const asArray = Object.entries(this.state.checked);
+    const filtered = asArray.filter(([key, value]) => value === true).map(item => item[0]);
+    
+    return (filtered.length === 1 && filtered[0] === "None of the above")
+  }
+
+  componentDidMount() {
+    // const checkboxes = {};
+    // this.props.question.options.forEach(option => checkboxes[option] = false);
+    // console.log(checkboxes);
+    // this.setState({ checked: {...checkboxes}});
   }
 
   //   componentDidUpdate() {
@@ -24,21 +42,22 @@ export default class Question extends React.Component {
     return (
       <div className="Question">
         <h1 className="Question__Title">{this.props.question.title}</h1>
+        
         {/* Checkbox question type */}
-        {this.props.question.type === "checkbox" ? (
+        {(this.props.question.type === "checkbox" && this.state.checked != null) ? (
           <div>
             <FormGroup>
-              {this.props.question.options.map((symptom) => (
+              {this.props.question.options.map((symptom, i) => (
                 <FormControlLabel
-                  control={<Checkbox defaultChecked />}
-                  label={symptom.big_text}
+                  control={<Checkbox name={symptom} checked={this.state.checked[symptom]} onChange={(event) => this.handleChange(event)}/>}
+                  label={symptom}
                 />
               ))}
             </FormGroup>
             <div className="ButtonFlex">
             <Button
               variant="contained"
-              onClick={() => this.props.listener(true)}
+              onClick={() => this.props.listener(this.validateCheckboxes())}
             >
               Continue
             </Button>

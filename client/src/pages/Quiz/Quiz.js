@@ -5,19 +5,7 @@ const questions = [
   {
     type: "checkbox",
     title: "In the last 10 days, have you experienced any of these symptoms?",
-    options: [
-      {
-        big_text: "Fever or chills",
-        little_text:
-          "Temperature of 37.8 degrees Celsius/100 degrees Fahrenheit or higher",
-      },
-      {
-        big_text: "Cough",
-        little_text:
-          "Continuous, more than usual, making a whistling noise when breathing",
-      },
-      { big_text: "None of the above", little_text: "" },
-    ],
+    options: ["Fever or chills", "Cough or barking cough (croup)", "Shortness of breath", "Decrease or loss of taste or smell", "Muscle aches/joint pain", "Extreme tiredness", "Sore throat", "Runny or stuffy/congested nose", "Headache", "Nausea, vomiting, and/or diarrhea", "None of the above"],
   },
   {
     type: "yes-no",
@@ -59,7 +47,6 @@ const questions = [
   },
 ];
 
-
 export default class Quiz extends React.Component {
   state = {
     questionIndex: 0,
@@ -68,16 +55,18 @@ export default class Quiz extends React.Component {
   };
 
   // Pass all of these questions to earn a checkmark
-  
 
   nextQuestion = (aValue) => {
-    console.log(`next question: ${aValue}`)
+    console.log(`next question: ${aValue}`);
     if (aValue === false) {
       this.setState({ fail: true });
     }
 
     if (aValue === true && this.state.questionIndex < 5) {
-      this.setState({ questionIndex: this.state.questionIndex+1, question: questions[this.state.questionIndex+1] });
+      this.setState({
+        questionIndex: this.state.questionIndex + 1,
+        question: questions[this.state.questionIndex + 1],
+      });
     } else if (aValue === true && this.state.questionIndex === 5) {
       //axios update reservation on server to show pass
       //then
@@ -89,9 +78,14 @@ export default class Quiz extends React.Component {
     return (
       <div className="Quiz">
         {this.state.fail ? (
-          <Question question={{title: 'Stay home and rest up!', type: 'fail'}} />
+          <Question
+            question={{ title: "Stay home and rest up!", type: "fail" }}
+          />
         ) : (
-          <Question question={this.state.question} listener={this.nextQuestion}/>
+          <Question
+            question={this.state.question}
+            listener={this.nextQuestion}
+          />
         )}
       </div>
     );
