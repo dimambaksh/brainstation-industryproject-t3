@@ -28,6 +28,7 @@ export default class Home extends React.Component {
       <div>
         <h1>Welcome Username</h1>
         <Button
+          fullWidth
           variant="contained"
           onClick={(event) => {
             event.preventDefault();
@@ -41,7 +42,7 @@ export default class Home extends React.Component {
           Book a desk
         </Button>
         {/* href="/reserve" */}
-        <Link to="/reserve">Reserve a Spot</Link>
+        {/* <Link to="/reserve">Reserve a Spot</Link> */}
         <h2>Your Upcoming Reservations</h2>
         <ReservationCard date={Date.now()} zone='Yellow' desk='Y7'/>
       </div>
