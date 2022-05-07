@@ -1,0 +1,11 @@
+.deskscontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+
+  &__desk {
+    background-color: F6F6F9;
+  }
+}

@@ -4,24 +4,30 @@ import Home from './pages/Home/Home';
 import Login from './pages/LogIn/Login';
 import Reserve from './pages/Reserve/Reserve';
 import Quiz from './pages/Quiz/Quiz';
+import Desks from './components/Desks/Desks';
 import "./App.css";
 
-class App extends React.Component {
+import React from "react";
+import Home from "./pages/Home/Home";
+import Login from "./pages/LogIn/Login";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Desks from "./components/Desks/Desks";
+import Reserve from "./pages/Reserve/Reserve";
 
+class App extends React.Component {
   //once we have a backend authorized should be initialized to false
   state = {
-    authorized : false,
+    authorized: false,
     user: {},
     email: "",
-    password: ""
-  }
+    password: "",
+  };
 
   logInListener = (event) => {
-
     event.preventDefault();
     console.log(event.target);
-    this.setState({[event.target.id]: event.target.value});
-  }
+    this.setState({ [event.target.id]: event.target.value });
+  };
 
   submitListener = (event) => {
     event.preventDefault();
@@ -42,17 +48,22 @@ class App extends React.Component {
     return (
       <div className="App">
         {/* If not logged in -> show the LogIn component*/}
-        {(this.state.authorized) ? (
-        <Router>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/reserve" component={Reserve} />
-            <Route path="/quiz" component={Quiz} />
-            <Redirect to="/" />
-          </Switch>
-        </Router>
+        {this.state.authorized ? (
+          <Router>
+            <Switch>
+              <Route exact path="/desks" component={Desks} />
+              <Route exact path="/reserve" component={Reserve} />
+              <Route path="/quiz" component={Quiz} />
+              <Route component={Home} />
+            </Switch>
+          </Router>
         ) : (
-          <Login email={this.state.email} password={this.setState.password} listener={this.logInListener} submitListener={this.submitListener}/>
+          <Login
+            email={this.state.email}
+            password={this.setState.password}
+            listener={this.logIn}
+            submitListener={this.submitListener}
+          />
         )}
       </div>
     );

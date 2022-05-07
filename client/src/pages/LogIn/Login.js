@@ -2,7 +2,7 @@ import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
 import "./LogIn.css"
 
-export default function ({email, password, listener, submitListener}) {
+export default function Login ({email, password, listener, submitListener}) {
   return (
     <>
       <h1>Log in</h1>
