@@ -1,0 +1,10 @@
+.deskscontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.deskscontainer__desk {
+  background-color: F6F6F9;
+}/*# sourceMappingURL=Desks.css.map */

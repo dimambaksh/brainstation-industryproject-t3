@@ -1,6 +1,30 @@
 .LogIn {
   margin: 1rem;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.threeCornerRectangle {
+  width: 100vw;
+  background-color: #0A5587;
+  margin: -1rem;
+  height: 40vh;
+  max-height: 344px;
+  box-sizing: content-box;
+  border-radius: 0 0 172px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.threeCornerRectangle h1 {
+  color: #fdfdfd;
+  letter-spacing: 3px;
+}
+
+.RememberMe {
+  position: relative;
+  top: -1rem;
+  left: 0.5rem;
 }/*# sourceMappingURL=LogIn.css.map */

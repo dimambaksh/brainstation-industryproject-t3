@@ -1,1 +1,12 @@
-/*# sourceMappingURL=Quiz.css.map */
+.Quiz {
+  height: 95vh;
+  max-height: 840px;
+  position: relative;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.Quiz__Progress {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}/*# sourceMappingURL=Quiz.css.map */

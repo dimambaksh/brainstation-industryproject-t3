@@ -1,5 +1,6 @@
 import React from "react";
 import Question from "../../components/Question/Question";
+import "./Quiz.css";
 
 const questions = [
   {
@@ -43,7 +44,7 @@ const questions = [
   },
   {
     type: "pass",
-    title: "You're good to go",
+    title: "Health Screening Passed!",
   },
 ];
 
@@ -77,6 +78,7 @@ export default class Quiz extends React.Component {
   render() {
     return (
       <div className="Quiz">
+        {(this.state.questionIndex < 5 && this.state.fail === false) ? (<p className="Quiz__Progress">Screening Question {this.state.questionIndex + 1}/5</p>) : (<></>)}
         {this.state.fail ? (
           <Question
             question={{ title: "Stay home and rest up!", type: "fail" }}

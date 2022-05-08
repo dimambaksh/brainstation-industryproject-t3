@@ -1,0 +1,17 @@
+
+
+.Quiz{
+
+    height: 95vh;
+    max-height: 840px;
+    position: relative;
+
+    &__Progress{
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}

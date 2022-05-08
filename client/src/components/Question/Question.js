@@ -23,29 +23,20 @@ export default class Question extends React.Component {
     return (filtered.length === 1 && filtered[0] === "None of the above")
   }
 
-  componentDidMount() {
-    // const checkboxes = {};
-    // this.props.question.options.forEach(option => checkboxes[option] = false);
-    // console.log(checkboxes);
-    // this.setState({ checked: {...checkboxes}});
-  }
-
-  //   componentDidUpdate() {
-  //       if(this.state.title !== this.props.question.title){
-  //           this.setState(...this.props.question)
-  //       }
-  //     console.log(this.props.question);
-
-  //   }
+  componentDidMount() {}
+  
 
   render() {
     return (
       <div className="Question">
-        <h1 className="Question__Title">{this.props.question.title}</h1>
+        {(this.props.question.type === "pass") ? <h1 className="Question__Title centered">{this.props.question.title}</h1> : <h1 className="Question__Title">{this.props.question.title}</h1>}
+        
         
         {/* Checkbox question type */}
         {(this.props.question.type === "checkbox" && this.state.checked != null) ? (
-          <div>
+          <>
+          <p className="Question__Instructions">Select “None of the above” if you have already completed your isolation period of 10 days.</p>
+          <div className="Question__CheckboxList">
             <FormGroup>
               {this.props.question.options.map((symptom, i) => (
                 <FormControlLabel
@@ -54,7 +45,9 @@ export default class Question extends React.Component {
                 />
               ))}
             </FormGroup>
-            <div className="ButtonFlex">
+
+          </div>
+          <div className="ButtonFlex">
             <Button
               variant="contained"
               onClick={() => this.props.listener(this.validateCheckboxes())}
@@ -62,7 +55,7 @@ export default class Question extends React.Component {
               Continue
             </Button>
             </div>
-          </div>
+          </>
         ) : (
           <></>
         )}
@@ -70,7 +63,7 @@ export default class Question extends React.Component {
         {/* 2 button Yes No question type */}
         {this.props.question.type === "yes-no" ? (
           <div>
-            <p>{this.props.question.body}</p>
+            <p className="Question__Body">{this.props.question.body}</p>
             <div className="ButtonFlex">
               <Button
                 variant="outlined"
@@ -93,13 +86,13 @@ export default class Question extends React.Component {
         {/* 2 button Yes No question type with bullet points */}
         {this.props.question.type === "yes-no-bullets" ? (
           <div>
-            <p>{this.props.question.upper_title}</p>
+            <p className="Question__Body">{this.props.question.upper_title}</p>
             <ul>
               {this.props.question.upper_bullets.map((bullet) => (
                 <li>{bullet}</li>
               ))}
             </ul>
-            <p>{this.props.question.lower_title}</p>
+            <p className="Question__Body">{this.props.question.lower_title}</p>
             <ul>
               {this.props.question.lower_bullets.map((bullet) => (
                 <li>{bullet}</li>

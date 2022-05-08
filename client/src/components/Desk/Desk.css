@@ -1,0 +1,69 @@
+.deskcontainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "tl tr" "ml mr" "bl br";
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  row-gap: 5px;
+}
+.deskcontainer .desk {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.deskcontainer .desk__person {
+  position: absolute;
+  margin: auto;
+  background-color: #009848;
+  border-radius: 50%;
+  border: 5px solid white;
+  width: 25px;
+  height: 25px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.deskcontainer .desk__person img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.deskcontainer .desk__person img:hover {
+  transform: scale(1.5);
+}
+.deskcontainer .desk__person.--left {
+  top: 15%;
+  left: 10%;
+}
+.deskcontainer .desk__person.--right {
+  top: 15%;
+  left: 20%;
+}
+.deskcontainer .desk__desk {
+  background-color: #E9EAF2;
+  position: absolute;
+  margin: auto;
+  border-radius: 5px;
+  width: 35px;
+  height: 50px;
+  z-index: 10;
+}
+.deskcontainer .desk__desk.--left {
+  left: 15px;
+}
+.deskcontainer .desk__desk.--right {
+  right: 15px;
+}
+.deskcontainer .desk__location {
+  position: relative;
+  background-color: #FFFFFF;
+  width: 50px;
+  height: 50px;
+}/*# sourceMappingURL=Desk.css.map */

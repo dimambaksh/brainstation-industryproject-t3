@@ -1,8 +1,18 @@
 .Question__Title {
-  text-align: center;
+  text-align: left;
+}
+.Question__Instructions {
+  margin-left: 0.5rem;
+}
+.Question__CheckboxList {
+  margin-left: 1rem;
+}
+.Question__Body {
+  padding-top: 1.5rem;
 }
 .Question ul {
   list-style-position: outside;
+  padding-left: 1rem;
 }
 .Question ul li {
   padding-bottom: 0.5rem;
@@ -11,7 +21,9 @@
   text-align: center;
 }
 .Question .ButtonFlex {
-  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 1rem);
   display: flex;
   flex-direction: row;
   gap: 1rem;
