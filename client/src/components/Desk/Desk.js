@@ -1,7 +1,11 @@
 import "./Desk.scss";
 import React from "react";
-import personImage from "../../assets/people/duncan.png"
+import personImage from "../../assets/people/duncan.png";
 export default class Desk extends React.Component {
+  componentDidMount() {
+    console.log(this.props.section);
+  }
+
   render() {
     return (
       <div
@@ -9,20 +13,23 @@ export default class Desk extends React.Component {
           this.props.className ? `${this.props.className} ` : ""
         }deskcontainer`}
       >
-        {this.props.desks.map((value, index) => {
+        {this.props.section.map((desk, index) => {
           return (
-            <div className="desk" key={`${value}-${index}-${Date.now()}`}>
-              {this.props.nobooking.indexOf(value) >= 0 ? (
-                <div className="desk__location">
-                  <div className="desk__blank"></div>
-                  <div className={`desk__desk ${(index + 1) % 2 === 0? "--right":"--left"}`}></div>
+            <div className="desk" key={`${desk.desk}-${index}-${Date.now()}`} onClick={(event) => this.props.deskClick(event, desk)}>
+              <div className="desk__location">
+                <div
+                  className={`${
+                    desk.available === "true" ? "desk__person" : "desk__blank"
+                  } ${(index + 1) % 2 === 0 ? "--right" : "--left"}`}
+                ></div>
+                <div
+                  className={`desk__desk ${
+                    (index + 1) % 2 === 0 ? "--right" : "--left"
+                  }`}
+                >
+                  {desk.desk}
                 </div>
-              ) : (
-                <div className="desk__location">
-                  <div className={`desk__person ${(index + 1) % 2 === 0? "--right":"--left"}`}><img src={personImage}/></div>
-                  <div className={`desk__desk ${(index + 1) % 2 === 0? "--right":"--left"}`}></div>
-                </div>
-              )}
+              </div>
             </div>
           );
         })}

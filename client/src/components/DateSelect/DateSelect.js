@@ -11,12 +11,14 @@ import "./DateSelect.scss";
 import { useState } from "react";
 
 export default function DateSelect(props) {
-  const [dateValue, setDateValue] = useState("");
-  const [zoneValue, setZoneValue] = useState("social");
 
   const handleZoneChange = (event) => {
-    setZoneValue(event.target.value);
+    props.setFloorSelected(event.target.value);
   };
+
+  const handleDateSelect = (event) =>{
+    props.setDateSelected(event.target.value);
+  }
 
   return (
     <div className="datepickercontainer">
@@ -28,7 +30,7 @@ export default function DateSelect(props) {
           <RadioGroup
             aria-labelledby="zone-choice-group-label"
             name="zone-choice"
-            value={zoneValue}
+            value={props && props.floorSelected ? props.floorSelected : ""}
             onChange={handleZoneChange}
           >
             <FormControlLabel
@@ -51,11 +53,9 @@ export default function DateSelect(props) {
           <MobileDatePicker
             views={["day", "month", "year"]}
             label="Pick Date"
-            value={dateValue}
+            value={props?.dateSelected? props.dateSelected: ""}
             name="date-choice"
-            onChange={(newValue) => {
-              setDateValue(newValue);
-            }}
+            onChange={handleDateSelect}
             renderInput={(params) => (
               <TextField {...params} helperText={null} />
             )}

@@ -8,7 +8,7 @@
 
   {"desk": "A2-1",
     "section": "A",
-    "floor": 1,
+    "floor": "1",
     "zone": "social",
     "available": "false"
   },
