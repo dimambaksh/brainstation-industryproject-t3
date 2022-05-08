@@ -1,0 +1,21 @@
+{
+    "dunc.macdonald@gmail.com":{
+        "image":"http://localhost:8080/assets/profiles/duncan.png"
+    },
+
+    "amy_xiee@hotmail.com":{
+        "image":"http://localhost:8080/assets/profiles/amy.png"
+    },
+
+    "aarone.amino@gmail.com":{
+        "image":"http://localhost:8080/assets/profiles/aarone.jpg"
+    },
+
+    "mbeganovic@gmail.com":{
+        "image":"http://localhost:8080/assets/profiles/mladen.jpg"
+    },
+
+    "duanecn@yahoo.com":{
+        "image":"http://localhost:8080/assets/profiles/duane.jpng"
+    }
+}

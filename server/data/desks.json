@@ -1,16 +1,337 @@
-{
-    "D1":{
-        "floor": 1,
-        "zone": "yellow"
-    },
+[
+  {"desk": "A1-1",
+    "section": "A",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
 
-    "D2":{
-        "floor": 1,
-        "zone": "yellow"
-    },
+  {"desk": "A2-1",
+    "section": "A",
+    "floor": 1,
+    "zone": "social",
+    "available": "false"
+  },
 
-    "D3":{
-        "floor": 1,
-        "zone": "yellow"
-    }
-}
+  {"desk": "A3-1",
+    "section": "A",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "A4-1",
+    "section": "A",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "A5-1",
+    "section": "A",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "A6-1",
+    "section": "A",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "B1-1",
+    "section": "B",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "B2-1",
+    "section": "B",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "B3-1",
+    "section": "B",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "B4-1",
+    "section": "B",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "B5-1",
+    "section": "B",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "B6-1",
+    "section": "B",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "C1-1",
+    "section": "C",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "C2-1",
+    "section": "C",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "C3-1",
+    "section": "C",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "C4-1",
+    "section": "C",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "C5-1",
+    "section": "C",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "C6-1",
+    "section": "C",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "D1-1",
+    "section": "D",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "D2-1",
+    "section": "D",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "D3-1",
+    "section": "D",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "D4-1",
+    "section": "D",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "D5-1",
+    "section": "D",
+    "floor": "1",
+    "zone": "social",
+    "available": "true"
+  },
+
+  {"desk": "D6-1",
+    "section": "D",
+    "floor": "1",
+    "zone": "social",
+    "available": "false"
+  },
+
+  {"desk": "A1-2",
+    "section": "A",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "A2-2",
+    "section": "A",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "A3-2",
+    "section": "A",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "A4-2",
+    "section": "A",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "A5-2",
+    "section": "A",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "A6-2",
+    "section": "A",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "B1-2",
+    "section": "B",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "B2-2",
+    "section": "B",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "B3-2",
+    "section": "B",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "B4-2",
+    "section": "B",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "B5-2",
+    "section": "B",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "B6-2",
+    "section": "B",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "C1-2",
+    "section": "C",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "C2-2",
+    "section": "C",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "C3-2",
+    "section": "C",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "C4-2",
+    "section": "C",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "C5-2",
+    "section": "C",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "C6-2",
+    "section": "C",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "D1-2",
+    "section": "D",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "D2-2",
+    "section": "D",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "D3-2",
+    "section": "D",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "D4-2",
+    "section": "D",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "D5-2",
+    "section": "D",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  },
+
+  {"desk": "D6-2",
+    "section": "D",
+    "floor": "2",
+    "zone": "collaborative",
+    "available": "true"
+  }
+]
