@@ -2,6 +2,7 @@ import "./BookDesk.scss";
 import React from "react";
 import Button from "@mui/material/Button";
 import DateSelect from "../DateSelect/DateSelect";
+import axios from "axios";
 
 export default class BookDesk extends React.Component {
   state = {
@@ -46,7 +47,7 @@ getDesksAvailable = () => {
     return (
       <div className="bookdeskcontainer">
         <h1>Book a Desk</h1>
-        <DateSelect dateFloorHandler={this.handleBookDeskDateFloor} setFloorSelected={setFloorSelected} setDateSelected={setDateSelected}></DateSelect>
+        <DateSelect dateFloorHandler={this.handleBookDeskDateFloor} setFloorSelected={this.setFloorSelected} setDateSelected={this.setDateSelected}></DateSelect>
         <Button
           variant="contained"
           onClick={(event) => {
