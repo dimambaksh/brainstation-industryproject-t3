@@ -13,8 +13,6 @@ router
 
 router
   .route("/reserve/:reservationId")
-  //.get(reservationController.safetyScreen)
-  //.get(reservationController.deleteReservation)
   .put(reservationController.safetyScreen)
   .delete(reservationController.deleteReservation);
 
