@@ -116,54 +116,6 @@ export default class Question extends React.Component {
         ) : (
           <></>
         )}
-
-        {/* You passed the quiz */}
-        {this.props.question.type === "pass" ? (
-          <div>
-            <p>Health and safety tips</p>
-            <ul>
-              <li>Keep a distance of at least 2 metres</li>
-              <li>
-                Make sure you wear a face covering or mask while indoors (and
-                outdoors when you cannot physically distance) and that it covers
-                your mouth, nose, and chin
-              </li>
-            </ul>
-            <div className="ButtonFlex">
-              <Button href="/" variant="contained">
-                Back to home
-              </Button>
-            </div>
-          </div>
-        ) : (
-          <></>
-        )}
-
-        {/* Failed quiz */}
-        {this.props.question.type === "fail" ? (
-          <div>
-            <p className="centered">
-              We recommend that you stay home to protect the health and safety
-              of the people you work with.
-            </p>
-            <p>Next Steps</p>
-            <ul>
-              <li>Tell your employer about this result</li>
-              <li>
-                You should isolate (stay home) and not leave except to get
-                tested, to visit a clinical assessment centre, or for a medical
-                emergency
-              </li>
-            </ul>
-            <div className="ButtonFlex">
-              <Button href="/" variant="contained">
-                Cancel reservation
-              </Button>
-            </div>
-          </div>
-        ) : (
-          <></>
-        )}
       </div>
     );
   }

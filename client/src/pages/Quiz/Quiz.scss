@@ -14,4 +14,42 @@
 
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+
+    .centered{
+        text-align: center;
+    }
+
+    .extraPadding{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .topMargin{
+        padding-top: 4rem;
+    }
+
+    .ButtonFlex{
+        position: absolute;
+        bottom: 20px;
+        width: calc(100% - 1rem);
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: center;
+
+        > * {
+            min-width: 45%;
+            width: 100%;
+        }
+    }
+
+    
+    ul {
+        padding-left: 1rem;
+
+        li{
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+    }
 }

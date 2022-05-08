@@ -9,4 +9,34 @@
   text-align: center;
   padding-top: 40px;
   padding-bottom: 20px;
+}
+.Quiz .centered {
+  text-align: center;
+}
+.Quiz .extraPadding {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.Quiz .topMargin {
+  padding-top: 4rem;
+}
+.Quiz .ButtonFlex {
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 1rem);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+.Quiz .ButtonFlex > * {
+  min-width: 45%;
+  width: 100%;
+}
+.Quiz ul {
+  padding-left: 1rem;
+}
+.Quiz ul li {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }/*# sourceMappingURL=Quiz.css.map */
