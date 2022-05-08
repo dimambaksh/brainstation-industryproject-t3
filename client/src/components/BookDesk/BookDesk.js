@@ -8,7 +8,7 @@ export default class BookDesk extends React.Component {
     return (
       <div className="bookdeskcontainer">
         <h1>Book a Desk</h1>
-        <DateSelect></DateSelect>
+        <DateSelect dateFloorHandler={this.props.dateFloorHandler}></DateSelect>
         <Button
           variant="contained"
           onClick={(event) => {
