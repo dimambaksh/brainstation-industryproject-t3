@@ -12,3 +12,24 @@
 .dropShadow{
   box-shadow: 2px 4px 8px 1px rgba(0, 0, 0, .2);;
 }
+
+.centered{
+  text-align: center;
+}
+
+.occupied{
+  background-color: $Blue-Dark;
+}
+
+.notAvailable{
+  background-color: $Grey;
+}
+
+.available{
+  background-color: $Blue-Inactive;
+}
+
+.selected{
+  background-color: $Blue;
+
+}

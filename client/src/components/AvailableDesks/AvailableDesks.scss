@@ -1,31 +1,31 @@
-.availabledeskscontainer {
-  &__floorlayout {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
+@import "../../styles/_colors";
 
-  &__legend {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-    &-header {
+.availabledeskscontainer{
+    margin-top: 40px;
+    
+    .floorlayout{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 
-    &-text {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      & div {
-        min-width: 40%;
-      }
-    }
-  }
+}
+
+
+.occupied{
+    background-color: $Blue-Dark;
+}
+
+.notAvailable{
+    background-color: $Grey;
+}
+
+.available{
+    background-color: $Blue-Inactive;
+}
+
+.selected{
+    background-color: $Blue;
+
 }

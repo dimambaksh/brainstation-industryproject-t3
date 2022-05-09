@@ -1,5 +1,25 @@
-.floorlayout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 10px;
+.availabledeskscontainer {
+  margin-top: 40px;
+}
+.availabledeskscontainer .floorlayout {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.occupied {
+  background-color: #001732;
+}
+
+.notAvailable {
+  background-color: #aaaaaa;
+}
+
+.available {
+  background-color: #899FB9;
+}
+
+.selected {
+  background-color: #0A5587;
 }/*# sourceMappingURL=AvailableDesks.css.map */

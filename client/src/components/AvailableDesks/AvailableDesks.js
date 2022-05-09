@@ -2,6 +2,8 @@ import "./AvailableDesks.scss";
 import React from "react";
 import Desks from "../Desks/Desks";
 import axios from "axios";
+import Legend from "../Legend/Legend";
+import { Button } from "@mui/material";
 import DeskSelectionModal from "../DeskSelectionModal/DeskSelectionModal";
 import { ReactComponent as NotAvailableLegend } from "../../assets/icons/notavailable_legend.svg";
 import { ReactComponent as AvailableLegend } from "../../assets/icons/available_legend.svg";
@@ -117,8 +119,9 @@ export default class AvailableDesks extends React.Component {
   render() {
     return (
       <div className="availabledeskscontainer">
-        <h1>Available Desks</h1>
-        <div className="availabledeskscontainer__floorlayout">
+        <h1 className="centered">Available Desks</h1>
+        <h4 className="centered">FLOOR: ZONE from props</h4>
+        <div className="floorlayout">
           {this.state.loaded ? (
             <Desks
               reservationsList={this.state.reservations}
@@ -129,35 +132,15 @@ export default class AvailableDesks extends React.Component {
             ""
           )}
         </div>
-        <div className="availabledeskscontainer__legend">
-          <div className="availabledeskscontainer__legend-header">
-            <h1>Legend</h1>
-          </div>
-          <div className="availabledeskscontainer__legend-text">
-            <div>
-              <NotAvailableLegend /> Not Available
-            </div>
-            <div>
-              <AvailableLegend /> Available
-            </div>
-            <div>
-              <OccupiedLegend /> Occupied
-            </div>
-            <div>
-              <SelectedLegend /> Selected
-            </div>
-          </div>
-        </div>
-        {this.state.showConfirmation ? (
-          <DeskSelectionModal
-            dateSelected={this.props.dateSelected}
-            deskSelected={this.props.deskSelected}
-            handleClose={this.handleClose}
-            handleConfirm={this.handleConfirm}
-          />
-        ) : (
-          ""
-        )}
+        <Legend />
+        <Button
+          variant="contained"
+          onClick={(event) => {
+            this.props.nextStage();
+          }}
+        >
+          Confirm
+        </Button>
       </div>
     );
   }

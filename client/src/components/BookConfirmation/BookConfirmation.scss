@@ -1,21 +1,10 @@
-.bookconfirmationcontainer{
-    width: 100%;
-    height: 100%;
+.bookconfirmationcontainer {
+    margin-top: 40px;
+    
+  .buttonFlex {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    
-    &__header{
-
-    }
-
-    &__choice{
-
-    }
-
-    &__actions{
-
-    }
+    gap: 2rem;
+    padding-top: 2rem;
+  }
 }

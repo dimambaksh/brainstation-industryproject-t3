@@ -11,6 +11,7 @@
   background-color: #0A5587;
   margin: -1rem;
   height: 40vh;
+  min-height: 200px;
   max-height: 344px;
   box-sizing: content-box;
   border-radius: 0 0 172px 0;

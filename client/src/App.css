@@ -56,4 +56,24 @@ a {
 
 .dropShadow {
   box-shadow: 2px 4px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+.centered {
+  text-align: center;
+}
+
+.occupied {
+  background-color: #001732;
+}
+
+.notAvailable {
+  background-color: #aaaaaa;
+}
+
+.available {
+  background-color: #899FB9;
+}
+
+.selected {
+  background-color: #0A5587;
 }/*# sourceMappingURL=App.css.map */
