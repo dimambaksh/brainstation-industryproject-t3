@@ -3,6 +3,7 @@ import React from "react";
 import Desks from "../Desks/Desks";
 import axios from "axios";
 import Legend from "../Legend/Legend";
+import { Button } from "@mui/material";
 import DeskSelectionModal from "../DeskSelectionModal/DeskSelectionModal";
 import { ReactComponent as NotAvailableLegend } from "../../assets/icons/notavailable_legend.svg";
 import { ReactComponent as AvailableLegend } from "../../assets/icons/available_legend.svg";
