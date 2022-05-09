@@ -1,1 +1,9 @@
-/*# sourceMappingURL=BookConfirmation.css.map */
+.bookconfirmationcontainer {
+  margin-top: 40px;
+}
+.bookconfirmationcontainer .buttonFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}/*# sourceMappingURL=BookConfirmation.css.map */

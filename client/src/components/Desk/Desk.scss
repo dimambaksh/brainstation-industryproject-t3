@@ -1,3 +1,5 @@
+@use "../../styles/colors" as *;
+
 .deskcontainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -6,75 +8,90 @@
     "tl tr"
     "ml mr"
     "bl br";
-    column-gap: 5px;
-    row-gap: 5px;
+  column-gap: 5px;
+  row-gap: 5px;
+  
+  .occupied {
+    background-color: $Blue-Dark;
+  }
 
-    .desk{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: center;
-        
-        
-        &__person{
-            position: absolute;
-            margin: auto;
-            background-color: #009848;
-            border-radius: 50%;
-            border: 5px solid white;
-            width: 25px;
-            height: 25px;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+  .notavailable {
+    background-color: $Grey;
+  }
 
-            img{
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-                object-fit: contain;
-                &:hover{
-                    transform: scale(1.5);
-                }
-            }
+  .available {
+    background-color: $Blue-Inactive;
+  }
 
-            &.--left{
-                top: 15%;
-                left: 10%;
-            }
+  .selected {
+    background-color: $Blue;
+  }
 
-            &.--right{
-                top: 15%;
-                left: 20%;
-            }
+  .desk {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    &__person {
+      position: absolute;
+      margin: auto;
+      background-color: #009848;
+      border-radius: 50%;
+      border: 5px solid white;
+      width: 25px;
+      height: 25px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: contain;
+        &:hover {
+          transform: scale(1.5);
         }
+      }
 
-        &__desk{
-            background-color: #E9EAF2;
-            position: absolute;
-            margin: auto;
-            border-radius: 5px;
-            width: 35px;
-            height: 50px;
-            z-index: 10;
+      &.--left {
+        top: 15%;
+        left: 20%;
+      }
 
-            &.--left{
-                left: 15px;
-            }
-
-            &.--right{
-                right: 15px;
-            }
-        }
-
-        &__location{
-            position: relative;
-            background-color: #FFFFFF;
-            width: 50px;
-            height: 50px;
-        }
+      &.--right {
+        top: 15%;
+        left: 10%;
+      }
     }
+
+    &__desk {
+      // background-color: #E9EAF2;
+      position: absolute;
+      margin: auto;
+      border-radius: 5px;
+      width: 35px;
+      height: 50px;
+      z-index: 10;
+
+      &.--left {
+        left: 20px;
+      }
+
+      &.--right {
+        right: 20px;
+      }
+    }
+
+    &__location {
+      position: relative;
+      background-color: #ffffff;
+      width: 50px;
+      height: 50px;
+    }
+  }
 }

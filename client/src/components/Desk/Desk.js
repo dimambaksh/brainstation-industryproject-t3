@@ -38,11 +38,17 @@ export default class Desk extends React.Component {
                 </div>
                 <div
                   className={`desk__desk ${
-                    (index + 1) % 2 === 0 ? "--right" : "--left"
-                  }`}
-                >
-                  {desk.desk}
-                </div>
+                    desk.available === "true"
+                      ? `${
+                          this.props.reservations[desk.desk]
+                            ? "notavailable"
+                            : desk.desk === this.props.deskSelected.desk
+                            ? "selected available"
+                            : "available"
+                        }`
+                      : "notavailable"
+                  } ${(index + 1) % 2 === 0 ? "--right" : "--left"}`}
+                ></div>
               </div>
             </div>
           );

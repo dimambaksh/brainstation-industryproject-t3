@@ -3,12 +3,8 @@ import React from "react";
 import Desks from "../Desks/Desks";
 import axios from "axios";
 import Legend from "../Legend/Legend";
-import { Button } from "@mui/material";
 import DeskSelectionModal from "../DeskSelectionModal/DeskSelectionModal";
-import { ReactComponent as NotAvailableLegend } from "../../assets/icons/notavailable_legend.svg";
-import { ReactComponent as AvailableLegend } from "../../assets/icons/available_legend.svg";
-import { ReactComponent as OccupiedLegend } from "../../assets/icons/occupied_legend.svg";
-import { ReactComponent as SelectedLegend } from "../../assets/icons/selected_legend.svg";
+import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
 export default class AvailableDesks extends React.Component {
   state = {
@@ -44,7 +40,7 @@ export default class AvailableDesks extends React.Component {
   };
 
   postDeskReservation = async () => {
-     /**
+    /**
      * {
      * desk: "D4-1",
      * floor: "1",
@@ -60,7 +56,7 @@ export default class AvailableDesks extends React.Component {
         desk: this.props.deskSelected.desk,
         floor: this.props.deskSelected.floor,
         zone: this.props.deskSelected.zone,
-        person: sessionStorage.getItem('loggedIn'),
+        person: sessionStorage.getItem("loggedIn"),
         reservationdate: this.props.dateSelected,
       },
     })
@@ -93,6 +89,7 @@ export default class AvailableDesks extends React.Component {
   handleClose = (event) => {
     event.preventDefault();
     event.stopPropagation();
+    this.props.setDeskSelected({});
     this.setState({ showConfirmation: false });
   };
 
@@ -119,12 +116,18 @@ export default class AvailableDesks extends React.Component {
   render() {
     return (
       <div className="availabledeskscontainer">
+        <HeaderMenu hrefLocation="/reserve"></HeaderMenu>
         <h1 className="centered">Available Desks</h1>
-        <h4 className="centered">FLOOR: ZONE from props</h4>
+        <h4 className="centered">
+          {this.props.floorSelected === "social"
+            ? "1st Floor: Social Distance Zone"
+            : "2nd Floor: Collaborative Zone"}
+        </h4>
         <div className="floorlayout">
           {this.state.loaded ? (
             <Desks
               reservationsList={this.state.reservations}
+              deskSelected={this.props.deskSelected}
               desksAvailable={this.props.desksAvailable.desks.desksAvailable}
               deskClick={this.handleDeskClick}
             />

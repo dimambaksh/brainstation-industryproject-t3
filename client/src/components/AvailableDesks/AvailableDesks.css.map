@@ -1,1 +1,1 @@
-{"version":3,"sources":["AvailableDesks.scss","AvailableDesks.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,8BAAA;EACA,aAAA;ACCJ","file":"AvailableDesks.css"}
+{"version":3,"sources":["AvailableDesks.scss","AvailableDesks.css","../../styles/_colors.scss"],"names":[],"mappings":"AAEA;EACI,gBAAA;ACDJ;ADGI;EACI,aAAA;EACA,WAAA;EACA,uBAAA;EACA,mBAAA;ACDR;;ADOA;EACI,yBEfQ;ADWZ;;ADOA;EACI,yBEfG;ADWP;;ADOA;EACI,yBErBY;ADiBhB;;ADOA;EACI,yBE1BG;ADsBP","file":"AvailableDesks.css"}

@@ -1,0 +1,33 @@
+.Legend {
+  border-radius: 4px;
+}
+.Legend h4 {
+  padding-top: 4px;
+  margin-bottom: 8px;
+}
+.Legend__Flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+}
+.Legend__Flex > * {
+  width: 40%;
+  display: flex;
+  padding: 0.5rem;
+}
+.Legend__Flex > * span {
+  font-size: 14px;
+  padding-left: 0.5rem;
+}
+.Legend .swatch {
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+}
+.Legend .swatch > div {
+  position: relative;
+  left: -10px;
+}/*# sourceMappingURL=Legend.css.map */
