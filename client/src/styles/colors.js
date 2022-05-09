@@ -13,6 +13,14 @@ export const theme = createTheme({
       // dark: will be calculated from palette.secondary.main,
       contrastText: '#ffcc00',
     },
+    pass:{
+        main: '#016818',
+        contrastText: "#ffffff",
+    },
+    deactivated:{
+        main: '#D7D7D7',
+        contrastText: '#565656',
+    },
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.
     contrastThreshold: 3,

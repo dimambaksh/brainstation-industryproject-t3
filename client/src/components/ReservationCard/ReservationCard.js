@@ -1,22 +1,48 @@
 import { Button } from "@mui/material";
 import "./ReservationCard.css";
 
-export default function ReservationCard({ date, zone, desk }) {
-    const birthday = new Date('August 19, 1975 23:15:30');
-    const weekday = { weekday: "long"};
-  const options = { month: "long", day: "numeric" };
+export default function ReservationCard({ date, zone, desk, screening }) {
+  const reservation = new Date(date);
+  const weekday = { weekday: "long" };
+  const options = { month: "long", day: "numeric", year: "numeric" };
 
   return (
-    <div className="ReservationCard">
-      <div className="ReservationCard__left">
-      <h3>{birthday.toLocaleDateString("en-CA", weekday)}</h3>
-        <h3>{birthday.toLocaleDateString("en-CA", options)}</h3>
-        <p>{zone} zone</p>
-        <p>Desk {desk}</p>
+    <section className="ReservationCard dropShadow">
+      <div className="ReservationCard__flex">
+        <div className="ReservationCard__left">
+          <div>
+            <h4>{reservation.toLocaleDateString("en-CA", weekday)}</h4>
+            <h4>{reservation.toLocaleDateString("en-CA", options)}</h4>
+          </div>
+
+          <p>{zone} zone</p>
+        </div>
+        <div className="ReservationCard__right">
+          <h4>Desk {desk}</h4>
+          <p>Floor 3</p>
+        </div>
       </div>
-      <div className="ReservationCard__right">
-          <Button href="/quiz" variant="contained">Complete Screening</Button>
-      </div>
-    </div>
+      {screening === "incomplete" ? (
+        <Button href="/quiz" fullWidth variant="contained">
+          Complete Health Screening
+        </Button>
+      ) : (
+        <></>
+      )}
+      {screening === "pass" ? (
+        <Button fullWidth color="pass" variant="contained">
+          Health Screening Passed
+        </Button>
+      ) : (
+        <></>
+      )}
+      {screening === "future" ? (
+        <Button fullWidth color="deactivated" variant="contained">
+          Complete Health Screening
+        </Button>
+      ) : (
+        <></>
+      )}
+    </section>
   );
 }

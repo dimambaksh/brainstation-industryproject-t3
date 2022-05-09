@@ -4,14 +4,38 @@
   padding: 1rem;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+.ReservationCard__flex {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .ReservationCard__left {
   width: 10rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
 }
-.ReservationCard__left > * {
+.ReservationCard__left * {
   margin: 0;
+}
+.ReservationCard__right {
+  width: 120px;
+  height: 80px;
+  background: rgba(10, 85, 135, 0.12);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ReservationCard__right > * {
+  margin: 0.1rem;
+  width: 75px;
+  text-align: left;
 }/*# sourceMappingURL=ReservationCard.css.map */
