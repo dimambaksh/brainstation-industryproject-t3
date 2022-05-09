@@ -1,1 +1,9 @@
-/*# sourceMappingURL=DateSelect.css.map */
+.datepickercontainer h2 {
+  color: black;
+  margin-top: -1rem;
+}
+.datepickercontainer .radiodetail {
+  padding-left: 2rem;
+  margin-top: 0;
+  font-size: 14px;
+}/*# sourceMappingURL=DateSelect.css.map */
