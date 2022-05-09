@@ -15,39 +15,48 @@ export default class DeskSelectionModal extends React.Component {
   render() {
     return (
       <div className="deskselectionmodal">
-        <div className="deskselectionmodal__dialog">
+        <div className="deskselectionmodal__dialog dropShadow">
           <div className="deskselectionmodal__dialog__top">
             <div className="deskselectionmodal__dialog__top-close">
-              <button onClick={this.props.handleClose}>
-                <CancelIcon />
-              </button>
+              <CancelIcon onClick={this.props.handleClose} />
             </div>
           </div>
           <div className="deskselectionmodal__dialog__body">
-            <div className="deskselectionmodal__dialog__body__text">
-              <h1>Your Selected Desk</h1>
-            </div>
+            <p className="centered">Your Selected Desk</p>
+
             <div className="deskselectionmodal__dialog__body__choice">
-              <div>
-                <ZoneIcon /> {this.props.deskSelected.zone}
+              <div className="flex-align">
+                <ZoneIcon />{" "}
+                <span className="capitalize">
+                  {this.props.deskSelected.zone} Zone
+                </span>
               </div>
-              <div>
-                <DeskIcon /> {this.props.deskSelected.desk}
+              <div className="flex-align narrow">
+                <DeskIcon />{" "}
+                <span className="capitalize">
+                  {this.props.deskSelected.desk}
+                </span>
               </div>
-              <div>
-                <DateIcon /> {this.props.dateSelected}
+              <div className="flex-align">
+                <DateIcon />{" "}
+                <span className="capitalize">{this.props.dateSelected}</span>
               </div>
-              <div>
-                <FloorIcon /> {this.props.deskSelected.floor}
+              <div className="flex-align narrow">
+                <FloorIcon />{" "}
+                <span className="capitalize">
+                  {this.props.deskSelected.floor}
+                </span>
               </div>
             </div>
           </div>
           <div className="deskselectionmodal__dialog__actions">
-            <div className="deskselectionmodal__dialog__actions-confirm">
-            <Button variant="contained" onClick={this.props.handleConfirm}>
-          Confirm
-              </Button>
-            </div>
+            <Button
+              fullWidth
+              variant="contained"
+              onClick={this.props.handleConfirm}
+            >
+              Confirm
+            </Button>
           </div>
         </div>
       </div>
