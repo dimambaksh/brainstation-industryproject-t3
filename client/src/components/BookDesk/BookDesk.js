@@ -25,7 +25,7 @@ export default class BookDesk extends React.Component {
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;
     
-    let todayFormatted = dd + '/' + mm + '/' + yyyy;
+    let todayFormatted = mm + '/' + dd + '/' + yyyy;
     
     return todayFormatted;
   }
@@ -68,7 +68,7 @@ export default class BookDesk extends React.Component {
   render() {
     return (
       <div className="bookdeskcontainer">
-        <h1>Book a Desk</h1>
+        <h1 className="centered">Book a Desk</h1>
         <DateSelect
           dateFloorHandler={this.handleBookDeskDateFloor}
           floorSelected={this.state.floorSelected}
@@ -76,12 +76,14 @@ export default class BookDesk extends React.Component {
           dateSelected={this.state.dateSelected}
           setDateSelected={this.setDateSelected}
         ></DateSelect>
-        <Button
+        <div className="buttonholder"><Button
+          fullWidth
           variant="contained"
           onClick={this.handleBookDeskDateFloor}
         >
           View Available Desks
         </Button>
+        </div>
       </div>
     );
   }

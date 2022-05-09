@@ -1,1 +1,6 @@
-/*# sourceMappingURL=BookDesk.css.map */
+.bookdeskcontainer .centered {
+  text-align: center;
+}
+.bookdeskcontainer .buttonholder {
+  padding: 1rem;
+}/*# sourceMappingURL=BookDesk.css.map */

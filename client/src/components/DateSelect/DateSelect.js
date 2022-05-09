@@ -17,7 +17,8 @@ export default function DateSelect(props) {
   };
 
   const handleDateSelect = (event) =>{
-    props.setDateSelected(event.target.value);
+    console.log(event);
+    // props.setDateSelected(event.target.value);
   }
 
   return (
@@ -25,7 +26,7 @@ export default function DateSelect(props) {
       <form className="LogIn" onSubmit={(event) => console.log(event)}>
         <FormControl>
           <FormLabel id="zone-choice-group-label">
-            Select a zone:
+            <h2 className="noTrasnparency">Select a zone:</h2>
           </FormLabel>
           <RadioGroup
             aria-labelledby="zone-choice-group-label"
@@ -38,20 +39,20 @@ export default function DateSelect(props) {
               control={<Radio />}
               label="Socially Distanced Zone"
             />
-            Masks are required except when eating or drinking. Desks are spaced
-            2m apart and away from high traffic areas.
+            <p className="radiodetail">Masks are required except when eating or drinking. Desks are spaced
+            2m apart and away from high traffic areas.</p>
             <FormControlLabel
               value="collaborative"
               control={<Radio />}
               label="Collaborative Zone"
             />
-            Masks are optional but strongly encouraged. Desks are grouped
-            together to allow for collaboration.
+            <p className="radiodetail">Masks are optional but strongly encouraged. Desks are grouped
+            together to allow for collaboration.</p>
           </RadioGroup>
         </FormControl>
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <MobileDatePicker
-            views={["day", "month", "year"]}
+            views={["day"]}
             label="Pick Date"
             value={props?.dateSelected? props.dateSelected: ""}
             name="date-choice"
