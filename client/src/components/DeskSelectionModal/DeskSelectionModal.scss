@@ -1,0 +1,59 @@
+.deskselectionmodal {
+  z-index: 2000;
+  width: 430px;
+  height: 270px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background: #FDFDFD;
+
+  &__dialog {
+    z-index: 3000;
+    box-shadow: -1rem 1rem 1rem rgba(black, 0.2);
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 4px;
+
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    &__top {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      &-close {
+        width: 24px;
+        }
+    }
+
+    &__body {
+      flex-grow: 1;
+      &__text {
+      }
+
+      &__choice {
+        }
+    }
+
+    &__actions {
+      align-self: flex-end;
+      max-width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      &-confirm {
+        max-width: 50%;
+      }
+    }
+  }
+}

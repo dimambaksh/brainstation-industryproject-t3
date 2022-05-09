@@ -17,7 +17,11 @@ export default function DateSelect(props) {
   };
 
   const handleDateSelect = (event) =>{
-    props.setDateSelected(event.toLocaleDateString('en-US'));
+    let dateSelected = new Date(event.toLocaleDateString('en-US'));
+    let dateString = ('0' + (dateSelected.getMonth()+1)).slice(-2)  + '/'
+             + ('0' + dateSelected.getDate()).slice(-2)+ '/'
+             + dateSelected.getFullYear();
+    props.setDateSelected(dateString);
     // props.setDateSelected(event.target.value);
   }
 

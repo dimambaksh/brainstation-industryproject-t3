@@ -1,6 +1,11 @@
 import "./BookConfirmation.scss";
 import React from "react";
 import Button from "@mui/material/Button";
+import { ReactComponent as ConfirmationOK } from "../../assets/icons/confirm-ok.svg";
+import { ReactComponent as ZoneIcon } from "../../assets/icons/zone.svg";
+import { ReactComponent as DeskIcon } from "../../assets/icons/desk.svg";
+import { ReactComponent as DateIcon } from "../../assets/icons/date.svg";
+import { ReactComponent as FloorIcon } from "../../assets/icons/floor.svg";
 
 export default class BookConfirmation extends React.Component {
   render() {
