@@ -1,5 +1,6 @@
 .floorlayout{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }

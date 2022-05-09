@@ -80,7 +80,7 @@ const reservationTemplate = () => {
 const getDesksAvailable = (dateIn, floorIn) => {
   let deskData = readDeskData();
   let desksAvailable = deskData.filter(
-    (desk) => desk.available === "true" && desk.floor === floorIn
+    (desk) => desk.floor === floorIn
   );
   let reservationData = readReservationData();
   let currentReservations = reservationData.filter(
