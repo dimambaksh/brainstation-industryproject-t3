@@ -5,11 +5,13 @@ import { ReactComponent as ZoneIcon } from "../../assets/icons/zone.svg";
 import { ReactComponent as DeskIcon } from "../../assets/icons/desk.svg";
 import { ReactComponent as DateIcon } from "../../assets/icons/date.svg";
 import { ReactComponent as FloorIcon } from "../../assets/icons/floor.svg";
+import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
 export default class BookConfirmation extends React.Component {
   render() {
     return (
       <div className="bookconfirmationcontainer">
+        <HeaderMenu></HeaderMenu>
         <h1 className="centered">Your Desk is Confirmed!</h1>
         <div className="centered">
           <svg
