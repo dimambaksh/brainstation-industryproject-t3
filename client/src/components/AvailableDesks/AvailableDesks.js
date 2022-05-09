@@ -3,12 +3,7 @@ import React from "react";
 import Desks from "../Desks/Desks";
 import axios from "axios";
 import Legend from "../Legend/Legend";
-import { Button } from "@mui/material";
 import DeskSelectionModal from "../DeskSelectionModal/DeskSelectionModal";
-import { ReactComponent as NotAvailableLegend } from "../../assets/icons/notavailable_legend.svg";
-import { ReactComponent as AvailableLegend } from "../../assets/icons/available_legend.svg";
-import { ReactComponent as OccupiedLegend } from "../../assets/icons/occupied_legend.svg";
-import { ReactComponent as SelectedLegend } from "../../assets/icons/selected_legend.svg";
 
 export default class AvailableDesks extends React.Component {
   state = {
@@ -133,14 +128,16 @@ export default class AvailableDesks extends React.Component {
           )}
         </div>
         <Legend />
-        <Button
-          variant="contained"
-          onClick={(event) => {
-            this.props.nextStage();
-          }}
-        >
-          Confirm
-        </Button>
+        {this.state.showConfirmation ? (
+          <DeskSelectionModal
+            dateSelected={this.props.dateSelected}
+            deskSelected={this.props.deskSelected}
+            handleClose={this.handleClose}
+            handleConfirm={this.handleConfirm}
+          />
+        ) : (
+          ""
+        )}
       </div>
     );
   }
