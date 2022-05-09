@@ -1,6 +1,31 @@
-.floorlayout{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+@import "../../styles/_colors";
+
+.availabledeskscontainer{
+    margin-top: 40px;
+    
+    .floorlayout{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+.occupied{
+    background-color: $Blue-Dark;
+}
+
+.notAvailable{
+    background-color: $Grey;
+}
+
+.available{
+    background-color: $Blue-Inactive;
+}
+
+.selected{
+    background-color: $Blue;
+
 }

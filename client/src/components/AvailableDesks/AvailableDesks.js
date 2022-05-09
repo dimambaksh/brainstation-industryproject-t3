@@ -3,6 +3,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import Desks from "../Desks/Desks";
 import axios from "axios";
+import Legend from "../Legend/Legend";
 
 export default class AvailableDesks extends React.Component {
   state = {
@@ -62,7 +63,8 @@ export default class AvailableDesks extends React.Component {
   render() {
     return (
       <div className="availabledeskscontainer">
-        <h1>Available Desks</h1>
+        <h1 className="centered">Available Desks</h1>
+        <h4 className="centered">FLOOR: ZONE from props</h4>
         <div className="floorlayout">
           {this.state.loaded ? (
             <Desks
@@ -74,6 +76,7 @@ export default class AvailableDesks extends React.Component {
             ""
           )}
         </div>
+        <Legend></Legend>
         <Button
           variant="contained"
           onClick={(event) => {

@@ -1,0 +1,41 @@
+
+.Legend{
+    border-radius: 4px;
+
+    h4{
+        padding-top: 4px;
+        margin-bottom: 8px;
+    }
+    
+    &__Flex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 0.5rem;
+        padding-left: 2rem;
+        padding-right: 1rem;
+
+
+        > * {
+            width: 40%;
+            display: flex;
+            padding: 0.5rem;
+
+            span{
+                font-size: 14px;
+                padding-left: 0.5rem;
+            }
+            
+        }
+    }
+    
+    .swatch{
+        height: 20px;
+        width: 20px;
+        border-radius: 4px;
+
+        > div{
+            position: relative;
+            left: -10px        }
+    }
+}

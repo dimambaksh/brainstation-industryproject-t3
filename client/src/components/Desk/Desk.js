@@ -37,7 +37,7 @@ export default class Desk extends React.Component {
                   )}
                 </div>
                 <div
-                  className={`desk__desk ${
+                  className={`desk__desk available ${
                     (index + 1) % 2 === 0 ? "--right" : "--left"
                   }`}
                 >
