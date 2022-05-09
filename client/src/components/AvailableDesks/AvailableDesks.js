@@ -88,6 +88,7 @@ export default class AvailableDesks extends React.Component {
   handleClose = (event) => {
     event.preventDefault();
     event.stopPropagation();
+    this.props.setDeskSelected({});
     this.setState({ showConfirmation: false });
   };
 
@@ -120,6 +121,7 @@ export default class AvailableDesks extends React.Component {
           {this.state.loaded ? (
             <Desks
               reservationsList={this.state.reservations}
+              deskSelected={this.props.deskSelected}
               desksAvailable={this.props.desksAvailable.desks.desksAvailable}
               deskClick={this.handleDeskClick}
             />

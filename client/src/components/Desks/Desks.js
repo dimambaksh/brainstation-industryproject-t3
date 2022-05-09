@@ -37,6 +37,7 @@ export default class Desks extends React.Component {
               return (
                 <Desk
                   deskClick={this.props.deskClick}
+                  deskSelected={this.props.deskSelected}
                   className="deskscontainer__desklayout"
                   key={`${section}-${index}-${Date.now()}`}
                   reservations={this.props.reservationsList}
