@@ -1,5 +1,6 @@
 .Quiz {
   height: 95vh;
+  min-height: 780px;
   max-height: 840px;
   position: relative;
   padding-left: 0.5rem;
