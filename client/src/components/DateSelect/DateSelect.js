@@ -53,6 +53,7 @@ export default function DateSelect(props) {
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <MobileDatePicker
             views={["day"]}
+            disablePast={true}
             label="Pick Date"
             value={props?.dateSelected? props.dateSelected: ""}
             name="date-choice"
