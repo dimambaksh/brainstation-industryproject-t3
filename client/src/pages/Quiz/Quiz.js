@@ -1,6 +1,7 @@
 import React from "react";
 import Question from "../../components/Question/Question";
 import { Button } from "@mui/material";
+import axios from "axios";
 import "./Quiz.css";
 
 const questions = [
@@ -63,9 +64,31 @@ export default class Quiz extends React.Component {
     fail: false,
     pass: false,
     question: questions[0],
+    reservationId: "",
   };
 
   // Pass all of these questions to earn a checkmark
+  updateSafetyScreen = async (booleanIn) => {
+    await axios({
+      method: "put",
+      url: `http://localhost:8080/reserve/${this.state.reservationId}`,
+      data:{
+        safetyScreen: `${booleanIn}`,
+      }
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        //console.error(error);
+        alert(`Server Response: Reservation not found.`);
+      });
+  };
+
+  componentDidMount(){
+    console.log(this.props);
+    this.setState({reservationId: this.props.match.params.reservationId});
+  }
 
   nextQuestion = (aValue) => {
     console.log(`next question: ${aValue}`);
@@ -81,6 +104,7 @@ export default class Quiz extends React.Component {
     } else if (aValue === true && this.state.questionIndex === 4) {
       //axios update reservation on server to show pass
       //then
+      this.updateSafetyScreen(true);
       this.setState({ pass: true, questionIndex: 6 });
     }
   };
