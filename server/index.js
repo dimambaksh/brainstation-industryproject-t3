@@ -19,6 +19,8 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const path = require("path");
+
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -26,8 +28,10 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 const serverRoutes = require("./routes/serverRoutes");
-
 app.use("/", serverRoutes);
+
+const publicPath = path.join(__dirname, "./assets");
+app.use("/public", express.static(publicPath));
 
 app.listen(8080, function () {
   console.log("Server started.");

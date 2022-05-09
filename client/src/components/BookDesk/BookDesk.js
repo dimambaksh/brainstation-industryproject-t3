@@ -11,7 +11,8 @@ export default class BookDesk extends React.Component {
   };
 
   componentDidMount(){
-      this.setDateSelected(this.getFormattedDate());
+    console.log("Book Desk.");
+    this.setDateSelected(this.getFormattedDate());
   }
 
 
@@ -57,7 +58,6 @@ export default class BookDesk extends React.Component {
       .then((response) => {
         console.log(response);
         this.props.setAvailableDesks(response.data);
-        this.props.nextStage();
       })
       .catch((error) => {
         console.error(error);
