@@ -6,6 +6,8 @@ import Reserve from './pages/Reserve/Reserve';
 import Quiz from './pages/Quiz/Quiz';
 import Desks from './components/Desks/Desks';
 import "./App.css";
+import { ThemeProvider } from '@emotion/react';
+import {theme} from "./styles/colors";
 
 class App extends React.Component {
   //once we have a backend authorized should be initialized to false
@@ -40,6 +42,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <ThemeProvider theme={theme}>
         {/* If not logged in -> show the LogIn component*/}
         {this.state.authorized ? (
           <Router>
@@ -51,13 +54,16 @@ class App extends React.Component {
             </Switch>
           </Router>
         ) : (
+          
           <Login
             email={this.state.email}
             password={this.setState.password}
             listener={this.logInListener}
             submitListener={this.submitListener}
           />
+          
         )}
+        </ThemeProvider>
       </div>
     );
   }

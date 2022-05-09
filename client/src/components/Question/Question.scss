@@ -1,11 +1,24 @@
 
 .Question{
     &__Title{
-        text-align: center;
+        text-align: left;
+    }
+
+    &__Instructions{
+        margin-left: 0.5rem;
+    }
+
+    &__CheckboxList{
+        margin-left: 1rem;
+    }
+
+    &__Body {
+        padding-top: 1.5rem;
     }
 
     ul{
         list-style-position: outside;
+        padding-left: 1rem;
 
         li {
             padding-bottom: 0.5rem;
@@ -16,7 +29,9 @@
         text-align: center;
     }
     .ButtonFlex{
-        width: 100%;
+        position: absolute;
+        bottom: 20px;
+        width: calc(100% - 1rem);
         display: flex;
         flex-direction: row;
         gap: 1rem;

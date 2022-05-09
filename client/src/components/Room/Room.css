@@ -1,0 +1,12 @@
+.roomcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.roomcontainer__room {
+  background-color: F6F6F9;
+  width: 100px;
+  height: 150px;
+}/*# sourceMappingURL=Room.css.map */
