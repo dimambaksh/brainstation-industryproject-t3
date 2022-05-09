@@ -58,7 +58,7 @@ export default class AvailableDesks extends React.Component {
         desk: this.props.deskSelected.desk,
         floor: this.props.deskSelected.floor,
         zone: this.props.deskSelected.zone,
-        person: "dunc.macdonald@gmail.com",
+        person: sessionStorage.getItem('loggedIn'),
         reservationdate: this.props.dateSelected,
       },
     })
