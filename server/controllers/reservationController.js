@@ -78,15 +78,25 @@ const reservationTemplate = () => {
 };
 
 const getDesksAvailable = (dateIn, floorIn) => {
+  console.log(dateIn, floorIn);
+  
   let deskData = readDeskData();
+
   let desksAvailable = deskData.filter(
-    (desk) => desk.floor === floorIn
+    (desk) => +desk.floor === +floorIn
   );
+
+  console.log(desksAvailable.length);
+
   let reservationData = readReservationData();
+  console.log(reservationData);
+
   let currentReservations = reservationData.filter(
     (reservation) =>
       reservation.reservationdate === dateIn && reservation.floor === floorIn
   );
+
+  console.log(currentReservations);
 
   let desksReservations = {
     desks: { desksAvailable },
@@ -98,26 +108,26 @@ const getDesksAvailable = (dateIn, floorIn) => {
 
 exports.index = (req, res) => {
   console.log("Reserve Index");
-  let currentRequest = {
-    date: "05/09/2022",
-    floor: "1",
-  }; //req.body;
+  console.log(req.params);
+  console.log(req.body);
 
-  res.status(200).json(getDesksAvailable(currentRequest.date, currentRequest.floor));
+  res.status(200).json(getDesksAvailable(req.body.date, req.params.floorSelected));
 };
 
 exports.reserve = (req, res) => {
   console.log("Reserve");
+  console.log(req.body);
   //reserve desk/floor/zone/user/date
-  let reservationRequest = {
-    desk: "D4-1",
-    floor: "1",
-    zone: "social",
-    person: "aarone.amino@gmail.com",
-    reservationdate: `05/09/2022`,
-  }; //req.body;
+  //const {desk, floor, zone, person, reservationdate} = req.body;
+  // let reservationRequest = {
+  //   desk: "D4-1",
+  //   floor: "1",
+  //   zone: "social",
+  //   person: "aarone.amino@gmail.com",
+  //   reservationdate: `05/09/2022`,
+  // }; //req.body;
   let newReservation = reservationTemplate();
-  newReservation = { ...newReservation, ...reservationRequest };
+  newReservation = { ...newReservation, ...req.body };
   console.log(newReservation);
 
   let reservationData = readReservationData();

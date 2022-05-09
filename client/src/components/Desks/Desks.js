@@ -14,10 +14,7 @@ export default class Desks extends React.Component {
     this.setState({ sections: this.getSections() }, () => {
       this.setState({ loaded: true });
     });
-  }
-
-  shouldComponentUpdate() {
-    return this.state.loaded;
+    console.log("Desks Mounted complete.");
   }
 
   getSections = () => {
@@ -41,7 +38,7 @@ export default class Desks extends React.Component {
                 <Desk
                   deskClick={this.props.deskClick}
                   className="deskscontainer__desklayout"
-                  key={`${section}-${index}`}
+                  key={`${section}-${index}-${Date.now()}`}
                   reservations={this.props.reservationsList}
                   section={this.props.desksAvailable.filter(
                     (desk) => desk.section === section
