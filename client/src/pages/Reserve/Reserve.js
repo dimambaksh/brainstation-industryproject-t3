@@ -5,6 +5,37 @@ export default class Reserve extends React.Component {
   state = {
     stage: 1,
     desksAvailable: {},
+    floorSelected: "social",
+    dateSelected: "",
+  };
+
+  componentDidMount() {
+    console.log("Reserve");
+    this.setDateSelected(this.getFormattedDate());
+  }
+
+  getFormattedDate = () => {
+    let today = new Date();
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1; // Months start at 0!
+    let dd = today.getDate();
+
+    if (dd < 10) dd = "0" + dd;
+    if (mm < 10) mm = "0" + mm;
+
+    let todayFormatted = mm + "/" + dd + "/" + yyyy;
+
+    return todayFormatted;
+  };
+
+  setFloorSelected = (stringIn) => {
+    this.setState({ floorSelected: stringIn });
+  };
+
+  setDateSelected = (stringIn) => {
+    console.log("stringIn: " + typeof stringIn + " " + stringIn);
+
+    this.setState({ dateSelected: stringIn });
   };
 
   setDesksAvailable = (objectIn) => {
@@ -31,12 +62,18 @@ export default class Reserve extends React.Component {
         return (
           <BookDesk
             nextStage={this.nextStage}
+            dateSelected={this.state.dateSelected}
+            floorSelected={this.state.floorSelected}
+            setDateSelected={this.setDateSelected}
+            setFloorSelected={this.setFloorSelected}
             setAvailableDesks={this.setDesksAvailable}
           ></BookDesk>
         );
       case 2:
         return (
           <AvailableDesks
+            dateSelected={this.state.dateSelected}
+            floorSelected={this.state.floorSelected}
             desksAvailable={this.state.desksAvailable}
             nextStage={this.nextStage}
           ></AvailableDesks>
