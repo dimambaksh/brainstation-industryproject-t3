@@ -17,7 +17,7 @@ export default function DateSelect(props) {
   };
 
   const handleDateSelect = (event) =>{
-    console.log(event);
+    props.setDateSelected(event.toLocaleDateString('en-US'));
     // props.setDateSelected(event.target.value);
   }
 

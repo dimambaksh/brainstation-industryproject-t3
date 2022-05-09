@@ -35,6 +35,8 @@ export default class BookDesk extends React.Component {
   };
 
   setDateSelected = (stringIn) => {
+    console.log("stringIn: " + typeof(stringIn) + " " + stringIn);
+    
     this.setState({ dateSelected: stringIn });
   };
 
