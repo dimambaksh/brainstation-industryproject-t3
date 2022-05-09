@@ -7,6 +7,7 @@ export default class Reserve extends React.Component {
     desksAvailable: {},
     floorSelected: "social",
     dateSelected: "",
+    deskSelected: {},
   };
 
   componentDidMount() {
@@ -26,6 +27,10 @@ export default class Reserve extends React.Component {
     let todayFormatted = mm + "/" + dd + "/" + yyyy;
 
     return todayFormatted;
+  };
+
+  setDeskSelected = (objectIn) => {
+    this.setState({ deskSelected: objectIn });
   };
 
   setFloorSelected = (stringIn) => {
@@ -75,11 +80,21 @@ export default class Reserve extends React.Component {
             dateSelected={this.state.dateSelected}
             floorSelected={this.state.floorSelected}
             desksAvailable={this.state.desksAvailable}
+            deskSelected={this.state.deskSelected}
+            setDeskSelected={this.setDeskSelected}
             nextStage={this.nextStage}
           ></AvailableDesks>
         );
       case 3:
-        return <BookConfirmation nextStage={this.nextStage}></BookConfirmation>;
+        return (
+          <BookConfirmation
+            history={this.props.history}
+            dateSelected={this.state.dateSelected}
+            floorSelected={this.state.floorSelected}
+            deskSelected={this.state.deskSelected}
+            nextStage={this.nextStage}
+          ></BookConfirmation>
+        );
       default:
         return <BookDesk nextStage={this.nextStage}></BookDesk>;
     }

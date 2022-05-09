@@ -12,7 +12,6 @@ export default class AvailableDesks extends React.Component {
   state = {
     reservations: {},
     showConfirmation: false,
-    deskSelected: {},
     loaded: false,
   };
 
@@ -56,9 +55,9 @@ export default class AvailableDesks extends React.Component {
       method: "post",
       url: `http://localhost:8080/reserve`,
       data: {
-        desk: this.state.deskSelected.desk,
-        floor: this.state.deskSelected.floor,
-        zone: this.state.deskSelected.zone,
+        desk: this.props.deskSelected.desk,
+        floor: this.props.deskSelected.floor,
+        zone: this.props.deskSelected.zone,
         person: "dunc.macdonald@gmail.com",
         reservationdate: this.props.dateSelected,
       },
@@ -110,7 +109,8 @@ export default class AvailableDesks extends React.Component {
       console.log("Desk cannot be selected");
       return true;
     } else {
-      this.setState({ deskSelected: desk, showConfirmation: true });
+      this.props.setDeskSelected(desk);
+      this.setState({ showConfirmation: true });
     }
   };
 
@@ -151,7 +151,7 @@ export default class AvailableDesks extends React.Component {
         {this.state.showConfirmation ? (
           <DeskSelectionModal
             dateSelected={this.props.dateSelected}
-            deskSelected={this.state.deskSelected}
+            deskSelected={this.props.deskSelected}
             handleClose={this.handleClose}
             handleConfirm={this.handleConfirm}
           />
