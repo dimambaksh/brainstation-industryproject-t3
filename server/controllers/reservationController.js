@@ -115,13 +115,22 @@ const getUserReservations = (userEmail) => {
       reservation.person.toLowerCase() === userEmail.toLowerCase()
   );
 
-  //console.log(currentReservations);
+  let sortedReservations = getSortedData(currentReservations);
+  console.log(sortedReservations);
 
   let userReservations = {
-    reservations: { currentReservations },
+    reservations: {currentReservations: sortedReservations},
   };
 
   return userReservations;
+};
+
+getSortedData = (dataIn) => {
+  console.log(dataIn);
+
+  return dataIn.sort((a, b) => {
+    return new Date(a.reservationdate) - new Date(b.reservationdate);
+  });
 };
 
 exports.index = (req, res) => {

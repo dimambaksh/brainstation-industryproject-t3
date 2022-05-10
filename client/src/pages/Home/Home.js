@@ -9,6 +9,7 @@ export default class Home extends React.Component {
     reserveClicked: false,
     reservationsLoaded: false,
     userReservations: [],
+    dateValues: { today: "", tomorrow: "" },
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -27,10 +28,27 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     this.getUserReservations();
-  }
 
-  shouldComponentUpdate() {
-    return this.state.reservationsLoaded;
+    let today = new Date();
+    let tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    let todayString =
+      ("0" + (today.getMonth() + 1)).slice(-2) +
+      "/" +
+      ("0" + today.getDate()).slice(-2) +
+      "/" +
+      today.getFullYear();
+    let tomorrowString =
+      ("0" + (tomorrow.getMonth() + 1)).slice(-2) +
+      "/" +
+      ("0" + tomorrow.getDate()).slice(-2) +
+      "/" +
+      tomorrow.getFullYear();
+
+    this.setState({
+      dateValues: { today: todayString, tomorrow: tomorrowString },
+    });
   }
 
   getUserReservations = async () => {
@@ -42,7 +60,9 @@ export default class Home extends React.Component {
     })
       .then((response) => {
         console.log(response.data.reservations.currentReservations);
-        
+
+        console.log(this.state);
+
         this.setState(
           { userReservations: response.data.reservations.currentReservations },
           () => {
@@ -90,9 +110,22 @@ export default class Home extends React.Component {
                   uuid={reservation.uuid}
                   date={reservation.reservationdate}
                   floor={reservation.floor}
-                  zone={reservation.zone==="collaborative"?"Collaborative":"Social Distance"}
+                  zone={
+                    reservation.zone === "collaborative"
+                      ? "Collaborative"
+                      : "Social Distance"
+                  }
                   desk={reservation.desk.split("-")[0]}
-                  screening={reservation.safetypass?"pass":"incomplete"}
+                  screening={
+                    reservation.reservationdate ===
+                      this.state.dateValues.today ||
+                    reservation.reservationdate ===
+                      this.state.dateValues.tomorrow
+                      ? reservation.safetypass
+                        ? "pass"
+                        : "incomplete"
+                      : "future"
+                  }
                 />
               );
             })

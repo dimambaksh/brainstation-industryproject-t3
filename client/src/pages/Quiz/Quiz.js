@@ -65,16 +65,44 @@ export default class Quiz extends React.Component {
     pass: false,
     question: questions[0],
     reservationId: "",
+    reservationDetails: {},
   };
 
   // Pass all of these questions to earn a checkmark
+  getUserReservations = async () => {
+    await axios({
+      method: "get",
+      url: `http://localhost:8080/reserve/${sessionStorage.getItem(
+        "loggedIn"
+      )}`,
+    })
+      .then((response) => {
+        console.log(response.data.reservations.currentReservations);
+
+        let currentReservation =
+          response.data.reservations.currentReservations.filter(
+            (reservation) => (reservation.uuid === this.state.reservationId)
+          );
+
+        console.log(currentReservation);
+
+        this.setState({
+          reservationDetails: currentReservation,
+        });
+      })
+      .catch((error) => {
+        //console.error(error);
+        alert(`Server Response: User not found.`);
+      });
+  };
+
   updateSafetyScreen = async (booleanIn) => {
     await axios({
       method: "put",
       url: `http://localhost:8080/reserve/${this.state.reservationId}`,
-      data:{
+      data: {
         safetyScreen: `${booleanIn}`,
-      }
+      },
     })
       .then((response) => {
         console.log(response);
@@ -85,15 +113,33 @@ export default class Quiz extends React.Component {
       });
   };
 
-  componentDidMount(){
+  deleteReservation = async () => {
+    await axios({
+      method: "delete",
+      url: `http://localhost:8080/reserve/${this.state.reservationId}`,
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        //console.error(error);
+        alert(`Server Response: Reservation not found.`);
+      });
+  };
+
+  componentDidMount() {
     console.log(this.props);
-    this.setState({reservationId: this.props.match.params.reservationId});
+    this.setState(
+      { reservationId: this.props.match.params.reservationId },
+      this.getUserReservations
+    );
   }
 
   nextQuestion = (aValue) => {
     console.log(`next question: ${aValue}`);
     if (aValue === false) {
       this.setState({ fail: true });
+      this.deleteReservation();
     }
 
     if (aValue === true && this.state.questionIndex < 4) {
@@ -193,15 +239,21 @@ export default class Quiz extends React.Component {
               </svg>
             </div>
             <h3 className="centered">
-            Your desk booking for 
-!!!DATE FROM STATE!!! is confirmed
+              Your desk booking for {this.state.reservationDetails[0].desk.split("-")[0]} on {this.state.reservationDetails[0].reservationdate} is confirmed
             </h3>
             <div className="extraPadding">
-            <h4>Health and Safety Tips</h4>
-            <ul>
-              <li>Keep a distance of at least 2 metres from people you do not live with</li>
-              <li>Make sure you wear a face covering or mask while indoors (and outdoors when you cannot physically distance) and that it covers your mouth, nose, and chin</li>
-            </ul>
+              <h4>Health and Safety Tips</h4>
+              <ul>
+                <li>
+                  Keep a distance of at least 2 metres from people you do not
+                  live with
+                </li>
+                <li>
+                  Make sure you wear a face covering or mask while indoors (and
+                  outdoors when you cannot physically distance) and that it
+                  covers your mouth, nose, and chin
+                </li>
+              </ul>
             </div>
             <div className="ButtonFlex">
               <Button href="/" variant="contained">
