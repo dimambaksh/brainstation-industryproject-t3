@@ -5,4 +5,9 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+
+    .btn {
+        text-transform: none;
+        padding-left: 1rem;
+      }
 }

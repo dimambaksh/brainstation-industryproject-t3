@@ -1,6 +1,34 @@
 .bookconfirmationcontainer {
-    margin-top: 40px;
-    
+  margin-top: 40px;
+
+  &__choice {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    & div {
+      width: 50%;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+
+    .narrow {
+      width: 25%;
+    }
+  }
+
+  .flex-align {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .capitalize{
+    text-transform: capitalize;
+  }
+
   .buttonFlex {
     display: flex;
     flex-direction: column;

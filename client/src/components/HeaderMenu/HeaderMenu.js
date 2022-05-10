@@ -14,17 +14,15 @@ export default class HeaderMenu extends React.Component {
       <div className="headermenu">
         <div className="headermenu__left">
           {this.props.hrefLocation ? (
-            <Button variant="contained" href={this.props.hrefLocation}>
-              <BackIcon />
+            <Button  variant="text" href={this.props.hrefLocation}>
+              <BackIcon /> <span className="btn">Back to the previous page</span>
             </Button>
           ) : (
             ""
           )}
         </div>
         <div className="headermenu__right">
-          <Button variant="contained">
-            <MenuIcon />
-          </Button>
+          <MenuIcon />
         </div>
       </div>
     );

@@ -33,19 +33,29 @@ export default class BookConfirmation extends React.Component {
           </svg>
         </div>
         <div className="bookconfirmationcontainer__choice">
-          <div>
-            <ZoneIcon /> {this.props.deskSelected.zone}
-          </div>
-          <div>
-            <DeskIcon /> {this.props.deskSelected.desk}
-          </div>
-          <div>
-            <DateIcon /> {this.props.dateSelected}
-          </div>
-          <div>
-            <FloorIcon /> {this.props.deskSelected.floor}
-          </div>
-        </div>
+        <div className="flex-align">
+                <ZoneIcon />{" "}
+                <span className="capitalize">
+                  {this.props.deskSelected.zone} Zone
+                </span>
+              </div>
+              <div className="flex-align narrow">
+                <DeskIcon />{" "}
+                <span className="capitalize">
+                  {this.props.deskSelected.desk}
+                </span>
+              </div>
+              <div className="flex-align">
+                <DateIcon />{" "}
+                <span className="capitalize">{this.props.dateSelected}</span>
+              </div>
+              <div className="flex-align narrow">
+                <FloorIcon />{" "}
+                <span className="capitalize">
+                  {this.props.deskSelected.floor}
+                </span>
+              </div>
+            </div>
         <div className="buttonFlex">
         <Button
           variant="contained"
