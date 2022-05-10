@@ -17,7 +17,7 @@ export default class BookDesk extends React.Component {
   getDesksAvailable = () => {
     axios({
       method: "post",
-      url: `http://localhost:8080/reserve/${this.props.floorSelected === "social"?"1":"2"}`,
+      url: `http://${process.env.REACT_APP_API_URL}:8080/reserve/${this.props.floorSelected === "social"?"1":"2"}`,
       data: {
         date: this.props.dateSelected,
       },

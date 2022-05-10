@@ -54,7 +54,7 @@ export default class Home extends React.Component {
   getUserReservations = async () => {
     await axios({
       method: "get",
-      url: `http://localhost:8080/reserve/${sessionStorage.getItem(
+      url: `http://${process.env.REACT_APP_API_URL}:8080/reserve/${sessionStorage.getItem(
         "loggedIn"
       )}`,
     })

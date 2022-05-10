@@ -33,7 +33,7 @@ class App extends React.Component {
   loginUser = async (userEmail) => {
     await axios({
       method: "post",
-      url: `http://localhost:8080/login`,
+      url: `http://${process.env.REACT_APP_API_URL}:8080/login`,
       data:{
         email: `${userEmail}`
       }
@@ -57,6 +57,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const username = sessionStorage.getItem("loggedIn");
+    console.log(`connectiong to: ${process.env.REACT_APP_API_URL}`);
     if (username != null) {
       this.setState({ authorized: true });
     }

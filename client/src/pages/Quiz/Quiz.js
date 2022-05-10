@@ -72,7 +72,7 @@ export default class Quiz extends React.Component {
   getUserReservations = async () => {
     await axios({
       method: "get",
-      url: `http://localhost:8080/reserve/${sessionStorage.getItem(
+      url: `http://${process.env.REACT_APP_API_URL}:8080/reserve/${sessionStorage.getItem(
         "loggedIn"
       )}`,
     })
@@ -99,7 +99,7 @@ export default class Quiz extends React.Component {
   updateSafetyScreen = async (booleanIn) => {
     await axios({
       method: "put",
-      url: `http://localhost:8080/reserve/${this.state.reservationId}`,
+      url: `http://${process.env.REACT_APP_API_URL}:8080/reserve/${this.state.reservationId}`,
       data: {
         safetyScreen: `${booleanIn}`,
       },
@@ -116,7 +116,7 @@ export default class Quiz extends React.Component {
   deleteReservation = async () => {
     await axios({
       method: "delete",
-      url: `http://localhost:8080/reserve/${this.state.reservationId}`,
+      url: `http://${process.env.REACT_APP_API_URL}:8080/reserve/${this.state.reservationId}`,
     })
       .then((response) => {
         console.log(response);

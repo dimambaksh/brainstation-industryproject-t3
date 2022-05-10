@@ -51,7 +51,7 @@ export default class AvailableDesks extends React.Component {
      */
     await axios({
       method: "post",
-      url: `http://localhost:8080/reserve`,
+      url: `http://${process.env.REACT_APP_API_URL}:8080/reserve`,
       data: {
         desk: this.props.deskSelected.desk,
         floor: this.props.deskSelected.floor,
@@ -73,7 +73,7 @@ export default class AvailableDesks extends React.Component {
     console.log(deskReservation);
     await axios({
       method: "get",
-      url: `http://localhost:8080/user/${deskReservation.person}`,
+      url: `http://${process.env.REACT_APP_API_URL}:8080/user/${deskReservation.person}`,
     })
       .then((response) => {
         let currentReservations = this.state.reservations;
