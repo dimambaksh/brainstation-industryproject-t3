@@ -27,7 +27,7 @@ class App extends React.Component {
   logInListener = (event) => {
     event.preventDefault();
     console.log(event.target);
-    this.setState({ [event.target.id]: event.target.value });
+    this.setState({ [event.target.id]: event.target.value.toLowerCase() });
   };
 
   loginUser = async (userEmail) => {

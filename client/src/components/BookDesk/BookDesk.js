@@ -3,6 +3,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import DateSelect from "../DateSelect/DateSelect";
 import axios from "axios";
+import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
 export default class BookDesk extends React.Component {
 
@@ -35,6 +36,7 @@ export default class BookDesk extends React.Component {
   render() {
     return (
       <div className="bookdeskcontainer">
+        <HeaderMenu hrefLocation="/"></HeaderMenu>
         <h1 className="centered">Book a Desk</h1>
         <DateSelect
           dateFloorHandler={this.handleBookDeskDateFloor}
