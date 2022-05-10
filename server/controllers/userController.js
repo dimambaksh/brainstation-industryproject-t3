@@ -60,7 +60,7 @@ exports.index = (req, res) => {
 exports.login = (req, res) => {
   console.log("Login");
   console.log(`User Login: ${req.body.email}`);
-  let currentUser = "aarone.amino@gmail.com" //req.body.email;
+  let currentUser = req.body.email.toLowerCase();//"aarone.amino@gmail.com" //req.body.email;
 
   let userDB = readUserData();
   if (currentUser && userDB[currentUser]){

@@ -17,5 +17,9 @@
 
     "duanecn@yahoo.com":{
         "image":"http://localhost:8080/public/profiles/duane.png"
+    },
+
+    "harry.h@mpi.com":{
+        "image":"http://localhost:8080/public/profiles/harry.jpg"
     }
 }

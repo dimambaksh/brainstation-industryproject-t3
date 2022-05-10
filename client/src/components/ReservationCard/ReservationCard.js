@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import "./ReservationCard.css";
 
-export default function ReservationCard({ date, zone, desk, screening }) {
+export default function ReservationCard({ uuid, date, zone, floor, desk, screening }) {
   const reservation = new Date(date);
   const weekday = { weekday: "long" };
   const options = { month: "long", day: "numeric", year: "numeric" };
@@ -19,11 +19,11 @@ export default function ReservationCard({ date, zone, desk, screening }) {
         </div>
         <div className="ReservationCard__right">
           <h4>Desk {desk}</h4>
-          <p>Floor 3</p>
+          <p>Floor {floor}</p>
         </div>
       </div>
       {screening === "incomplete" ? (
-        <Button href="/quiz" fullWidth variant="contained">
+        <Button href={`/quiz/${uuid}`} fullWidth variant="contained">
           Complete Health Screening
         </Button>
       ) : (

@@ -79,12 +79,10 @@ const reservationTemplate = () => {
 
 const getDesksAvailable = (dateIn, floorIn) => {
   console.log(dateIn, floorIn);
-  
+
   let deskData = readDeskData();
 
-  let desksAvailable = deskData.filter(
-    (desk) => +desk.floor === +floorIn
-  );
+  let desksAvailable = deskData.filter((desk) => +desk.floor === +floorIn);
 
   console.log(desksAvailable.length);
 
@@ -106,12 +104,56 @@ const getDesksAvailable = (dateIn, floorIn) => {
   return desksReservations;
 };
 
+const getUserReservations = (userEmail) => {
+  console.log(userEmail);
+
+  let reservationData = readReservationData();
+  //console.log(reservationData);
+
+  let currentReservations = reservationData.filter(
+    (reservation) =>
+      reservation.person.toLowerCase() === userEmail.toLowerCase()
+  );
+
+  let sortedReservations = getSortedData(currentReservations);
+  console.log(sortedReservations);
+
+  let userReservations = {
+    reservations: {currentReservations: sortedReservations},
+  };
+
+  return userReservations;
+};
+
+getSortedData = (dataIn) => {
+  console.log(dataIn);
+
+  return dataIn.sort((a, b) => {
+    return new Date(a.reservationdate) - new Date(b.reservationdate);
+  });
+};
+
 exports.index = (req, res) => {
   console.log("Reserve Index");
   console.log(req.params);
   console.log(req.body);
 
-  res.status(200).json(getDesksAvailable(req.body.date, req.params.floorSelected));
+  res
+    .status(200)
+    .json(getDesksAvailable(req.body.date, req.params.floorSelected));
+};
+
+exports.userReservations = (req, res) => {
+  console.log("User Reservations");
+  let currentUser = req.params.userId.toLowerCase();
+  let userDB = readUserData();
+  if (currentUser && userDB[currentUser]) {
+    console.log("Reservation retrieved successfully.");
+    res.status(200).send(getUserReservations(currentUser));
+  } else {
+    console.log("User not found.");
+    res.status(400).send([]);
+  }
 };
 
 exports.reserve = (req, res) => {
@@ -140,7 +182,8 @@ exports.reserve = (req, res) => {
 exports.safetyScreen = (req, res) => {
   console.log("Safety Screen");
   let currentReservation = req.params.reservationId;
-  let safetyScreen = true; //req.body.safetyScreen;
+  let safetyScreen = new Boolean(req.body.safetyScreen);
+  console.log(safetyScreen, req.body.safetyScreen, currentReservation);
 
   let reservationData = readReservationData();
   let userReservationData;
@@ -148,6 +191,7 @@ exports.safetyScreen = (req, res) => {
   reservationData
     .filter((reservation) => reservation.uuid === currentReservation)
     .map((userReservation) => {
+      console.log("Updating Safety Pass");
       userReservation.safetypass = safetyScreen;
       userReservationData = userReservation;
       return userReservation;
@@ -163,7 +207,9 @@ exports.deleteReservation = (req, res) => {
 
   let reservationData = readReservationData();
 
-  let newReservationData = reservationData.filter((reservation) => reservation.uuid !== currentReservation)
+  let newReservationData = reservationData.filter(
+    (reservation) => reservation.uuid !== currentReservation
+  );
 
   writeReservationData(newReservationData);
   res.status(200).send(newReservationData);
