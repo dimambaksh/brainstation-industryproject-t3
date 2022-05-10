@@ -2,7 +2,7 @@ import { Button, TextField } from "@mui/material";
 import React from "react";
 import axios from "axios";
 import ReservationCard from "../../components/ReservationCard/ReservationCard";
-import "./Home.css";
+import "./Home.scss";
 
 export default class Home extends React.Component {
   state = {

@@ -1,12 +1,1 @@
-[
-  {
-    "uuid": "3d025f03-7820-4458-8b55-c2dfa7ce9b7f",
-    "timestamp": 1652145284,
-    "floor": "1",
-    "desk": "B4-1",
-    "person": "dunc.macdonald@gmail.com",
-    "zone": "social",
-    "reservationdate": "05/13/2022",
-    "safetypass": false
-  }
-]
+[{"uuid":"3d025f03-7820-4458-8b55-c2dfa7ce9b7f","timestamp":1652145284,"floor":"1","desk":"B4-1","person":"dunc.macdonald@gmail.com","zone":"social","reservationdate":"05/13/2022","safetypass":false},{"uuid":"4607248c-db2d-45e2-b4dc-2305272c78ce","timestamp":1652153092,"floor":"1","desk":"B5-1","person":"dunc.macdonald@gmail.com","zone":"social","reservationdate":"05/10/2022","safetypass":true}]
