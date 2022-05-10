@@ -1,25 +1,25 @@
 {
     "dunc.macdonald@gmail.com":{
-        "image":"http://localhost:8080/public/profiles/duncan.png"
+        "image":"http://54.234.14.220:8080/public/profiles/duncan.png"
     },
 
     "amy_xiee@hotmail.com":{
-        "image":"http://localhost:8080/public/profiles/amy.png"
+        "image":"http://54.234.14.220:8080/public/profiles/amy.png"
     },
 
     "aarone.amino@gmail.com":{
-        "image":"http://localhost:8080/public/profiles/aarone.jpg"
+        "image":"http://54.234.14.220:8080/public/profiles/aarone.jpg"
     },
 
     "mbeganovic@gmail.com":{
-        "image":"http://localhost:8080/public/profiles/mladen.jpg"
+        "image":"http://54.234.14.220:8080/public/profiles/mladen.jpg"
     },
 
     "duanecn@yahoo.com":{
-        "image":"http://localhost:8080/public/profiles/duane.png"
+        "image":"http://54.234.14.220:8080/public/profiles/duane.png"
     },
 
     "harry.h@mpi.com":{
-        "image":"http://localhost:8080/public/profiles/harry.jpg"
+        "image":"http://54.234.14.220:8080/public/profiles/harry.jpg"
     }
 }
