@@ -1,0 +1,58 @@
+.deskselectionmodal {
+  z-index: 2000;
+  width: 104%;
+  height: 250px;
+  position: absolute;
+  top: 400;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdfdfd;
+}
+.deskselectionmodal__dialog {
+  z-index: 3000;
+  background-color: #fdfdfd;
+  width: 319px;
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  position: relative;
+}
+.deskselectionmodal__dialog__top-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+}
+.deskselectionmodal__dialog__body {
+  flex-grow: 1;
+}
+.deskselectionmodal__dialog__body__choice {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.deskselectionmodal__dialog__body__choice div {
+  width: 50%;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.deskselectionmodal__dialog__body__choice .narrow {
+  width: 25%;
+}
+.deskselectionmodal__dialog__actions {
+  padding-top: 1rem;
+}
+.deskselectionmodal .flex-align {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.deskselectionmodal .capitalize {
+  text-transform: capitalize;
+}/*# sourceMappingURL=DeskSelectionModal.css.map */
